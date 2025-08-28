@@ -32,3 +32,9 @@ Types of Data
 Step 1: Create Database
 
 CREATE DATABASE Schemadb;
+
+Step 2: Use Database 
+
+USE Schemadb;
+
+All DDL commands are provided in the db.sql file.

@@ -1,9 +1,9 @@
 <html>
   <head>
   </head>
-  <title></title>
+  <title> The Chronologicon Engine </title>
   <body>
-<h2>The Chronologicon Engine : Database design<h2>
+<h2>Database design<h2>
 
 This design is simple and effective for the intended relationships.
 
@@ -22,9 +22,6 @@ TIMESTAMP is employed for start_date and end_date to precisely capture date and 
 JSON serves as the metadata column, offering a versatile schema for any associated unstructured data tied to an event.
 
 Indexing: start_date and end_date are indexed to enhance the performance of queries that search for or filter events within a designated date range, as needed by the API search endpoints
-
-
-
 
 
 Step 1: Creating Database 

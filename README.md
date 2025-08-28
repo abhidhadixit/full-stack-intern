@@ -1,31 +1,34 @@
-<html>
-  <head>
-  </head>
+Database Design
 
-  <body>
-<h2>Database design<h2>
+This design is simple and effective for the intended relationships.
 
-<p>This design is simple and effective for the intended relationships.</p>
+Relation Schema
+The HistoricalEvents table stores the event data.
 
-<p>A relation schema: HistoricalEvents table stores the data.</p>
+Primary Key
+- event_id: CHAR(36)  
+  - Stores a UUID as the primary key  
+  - Guarantees a globally unique identifier for each event, which is essential for managing data from various sources  
 
-<p>UUID as Primary Key: The event_id is specified as CHAR(36) to hold a UUID. This guarantees a globally unique identifier for each event, which is essential for managing data from various sources.</p>
+Hierarchical Connections
+- parent_event_id: CHAR(36)  
+  - A self-referencing foreign key  
+  - Enables hierarchical relationships between events (for example, parent/child events), allowing easy tracking of timelines  
 
-<p>Hierarchical Connections: The relationship between parent and child is handled with a self-referencing foreign key in the parent_event_id column. This enables us to effortlessly track timelines and hierarchical events.</p>
-
-<h4>Types of Data:</h4>
-
-Using CHAR(36) for UUIDs is a common practice in MySQL.
-
-TIMESTAMP is employed for start_date and end_date to precisely capture date and time details.
-
-JSON serves as the metadata column, offering a versatile schema for any associated unstructured data tied to an event.
-
-Indexing: start_date and end_date are indexed to enhance the performance of queries that search for or filter events within a designated date range, as needed by the API search endpoints
+Types of Data
+- UUIDs: Stored as CHAR(36), a common practice in MySQL  
+- Dates: TIMESTAMP is used for start_date and end_date to precisely capture both date and time details  
 
 
-Step 1: Creating Database 
-Create database Schemadb;
-Step 2: Use Schemadb;
-</body>
-</html>
+Types of Data
+
+- UUIDs: Stored as CHAR(36), which is a common practice in MySQL  
+- Dates: TIMESTAMP is used for start_date and end_date to precisely capture both date and time details  
+- Metadata: JSON serves as the metadata column, offering a versatile schema for any associated unstructured data tied to an event  
+- Indexing: start_date and end_date are indexed to enhance the performance of queries that search for or filter events within a designated date range, as required by the API search endpoints  
+
+ Setup Instructions
+
+Step 1: Create Database
+
+CREATE DATABASE Schemadb;

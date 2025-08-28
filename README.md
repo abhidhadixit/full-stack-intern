@@ -1,19 +1,19 @@
 <html>
   <head>
   </head>
-  <title> The Chronologicon Engine </title>
+
   <body>
 <h2>Database design<h2>
 
-This design is simple and effective for the intended relationships.
+<p>This design is simple and effective for the intended relationships.</p>
 
-A relation schema: HistoricalEvents table stores the data.
+<p>A relation schema: HistoricalEvents table stores the data.</p>
 
-UUID as Primary Key: The event_id is specified as CHAR(36) to hold a UUID. This guarantees a globally unique identifier for each event, which is essential for managing data from various sources.
+<p>UUID as Primary Key: The event_id is specified as CHAR(36) to hold a UUID. This guarantees a globally unique identifier for each event, which is essential for managing data from various sources.</p>
 
-Hierarchical Connections: The relationship between parent and child is handled with a self-referencing foreign key in the parent_event_id column. This enables us to effortlessly track timelines and hierarchical events.
+<p>Hierarchical Connections: The relationship between parent and child is handled with a self-referencing foreign key in the parent_event_id column. This enables us to effortlessly track timelines and hierarchical events.</p>
 
-Types of Data:
+<h4>Types of Data:</h4>
 
 Using CHAR(36) for UUIDs is a common practice in MySQL.
 

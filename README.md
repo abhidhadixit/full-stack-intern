@@ -27,3 +27,5 @@ Indexing: start_date and end_date are indexed to enhance the performance of quer
 Step 1: Creating Database 
 Create database Schemadb;
 Step 2: Use Schemadb;
+</body>
+</html>
